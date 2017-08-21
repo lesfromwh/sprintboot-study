@@ -1,4 +1,4 @@
-package com.ls.chapter3_1_5;
+package com.ls.chapter3_1_1;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ls.chapter3_1_5"))
+                .apis(RequestHandlerSelectors.basePackage("com.ls.chapter3_1_1"))
                 .build();
     }
 
