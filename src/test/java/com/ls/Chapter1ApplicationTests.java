@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -23,9 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * 模拟http请求.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-//TODO 下面两个注解?
-@SpringApplicationConfiguration(classes = MockServletContext.class)
-@WebAppConfiguration
+@SpringBootTest
 public class Chapter1ApplicationTests {
     private MockMvc mvc;
 
