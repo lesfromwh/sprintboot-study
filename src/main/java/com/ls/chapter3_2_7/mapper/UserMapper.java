@@ -5,12 +5,14 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.mapstruct.Mapper;
+import org.springframework.stereotype.Component;
 
 /**
  * create by liushuang Date:2017/8/23 Time:18:08
  */
 @Mapper
-public interface  UserMapper {
+public interface UserMapper {
+
     @Select("SELECT * FROM USER WHERE NAME = #{name}")
     User findByName(@Param("name") String name);
 
