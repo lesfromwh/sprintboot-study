@@ -5,14 +5,17 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Component;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 
 /**
  * create by liushuang Date:2017/8/23 Time:18:08
  */
 @Mapper
+@CacheConfig(cacheNames = "users")
 public interface UserMapper {
 
+    @Cacheable
     @Select("SELECT * FROM USER WHERE NAME = #{name}")
     User findByName(@Param("name") String name);
 

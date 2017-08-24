@@ -9,7 +9,7 @@ public class ThymeleafController {
 
     @RequestMapping("/thymeleaf")
     public String index(ModelMap map) {
-        map.addAttribute("host","thymeleaf-demo");
+        map.addAttribute("host","thymeleaf-ls");
         return "index";
 
     }
