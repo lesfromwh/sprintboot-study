@@ -2,9 +2,9 @@ package com.ls.chapter3_2_7.mapper;
 
 import com.ls.chapter3_2_7.pojo.User;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
 /**

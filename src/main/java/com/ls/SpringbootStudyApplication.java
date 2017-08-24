@@ -8,10 +8,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 //定时任务
 @EnableScheduling
-@MapperScan(basePackages = "com.ls")
+//@MapperScan(basePackages = "com.ls")
+/**
+ * @MapperScan和@Mapper 二选一
+ */
 public class SpringbootStudyApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootStudyApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootStudyApplication.class, args);
+    }
 }

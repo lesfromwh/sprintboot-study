@@ -16,12 +16,12 @@ public class ScheduledTasks {
 
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    @Test
+//    @Test
 //    @Scheduled(fixedRate = 5000)  //上一次开始执行时间点之后5秒再执行
-    @Scheduled(fixedDelay = 5000)   //上一次执行完毕时间点之后5秒再执行
-    public void reportCurrentTime() {
-        System.out.println("现在的时间 : "+simpleDateFormat.format(new Date()));
-    }
+//    @Scheduled(fixedDelay = 5000)   //上一次执行完毕时间点之后5秒再执行
+//    public void reportCurrentTime() {
+//        System.out.println("现在的时间 : "+simpleDateFormat.format(new Date()));
+//    }
     //运行启动类.查看效果.
     //quartz 集群
 }
