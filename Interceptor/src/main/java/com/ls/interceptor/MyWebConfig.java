@@ -10,14 +10,21 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 /**
  * @Configuration
- * 替换xml配置,定义一个配置类.
+ * 替换xml配置, 定义一个配置类.
  */
-public class MyWebConfig extends WebMvcConfigurerAdapter{
+public class MyWebConfig extends WebMvcConfigurerAdapter {
     /**
      * 注册拦截器
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor());
+//        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new LoginInterceptor()).excludePathPatterns("/login");
+        /**
+         * addPathPatterns("/login") 只会拦截   /login  不会拦截 /login/demo
+         * addPathPatterns("/login/**") 拦截 /login 和 /login/demo
+         * addPathPatterns("/**") 拦截所有.什么都不加是默认拦截所有.
+         * excludePathPatterns("/login") 排除该路径.
+         */
     }
 }

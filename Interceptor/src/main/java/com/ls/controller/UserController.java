@@ -14,4 +14,19 @@ public class UserController {
     public String login() {
         return "login";
     }
+
+    @RequestMapping(value = "/hello")
+    public String demo1() {
+        return "hello";
+    }
+
+    @RequestMapping(value = "/user")
+    public String demo2() {
+        return "user";
+    }
+
+    @RequestMapping(value = "/login/demo")
+    public String demo3() {
+        return "demo3";
+    }
 }
