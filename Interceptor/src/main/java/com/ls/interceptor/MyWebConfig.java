@@ -21,8 +21,8 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
 //        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**");
         registry.addInterceptor(new LoginInterceptor()).excludePathPatterns("/login");
         /**
-         * addPathPatterns("/login") 只会拦截   /login  不会拦截 /login/demo
-         * addPathPatterns("/login/**") 拦截 /login 和 /login/demo
+         * addPathPatterns("/login") 只会拦截   /login  不会拦截 /login/condition
+         * addPathPatterns("/login/**") 拦截 /login 和 /login/condition
          * addPathPatterns("/**") 拦截所有.什么都不加是默认拦截所有.
          * excludePathPatterns("/login") 排除该路径.
          */

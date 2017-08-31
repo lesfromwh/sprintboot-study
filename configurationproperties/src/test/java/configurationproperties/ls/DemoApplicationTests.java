@@ -17,6 +17,7 @@ public class DemoApplicationTests {
 	@Test
 	public void contextLoads() {
 		System.out.println(user);
+		System.out.println(user.getName());
 		//User{name='ls', address='biguiyuan'}
 		/**
 		 * 读取到了properties中的数据.
