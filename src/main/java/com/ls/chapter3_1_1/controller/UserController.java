@@ -66,9 +66,66 @@ public class UserController {
         return "success";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String deleteUserById(@PathVariable Long id) {
-        users.remove(id);
+    //假的post   http://localhost:8081/users/myDemo?id=1&name=ls&age=11
+    @ApiOperation(value="我的demo1")
+    @RequestMapping(value = "/myDemo1", method = RequestMethod.POST)
+    public String demo1(@RequestParam User user) {
+        System.out.println(user);
+        return "success";
+    }
+
+//    curl -X POST --header "Content-Type: application/json" --header "Accept: */*" -d "{
+//            \"age\": 0,
+//            \"id\": 0,
+//            \"name\": \"string\"
+//}" "http://localhost:8081/users/myDemo2"
+    @ApiOperation(value="我的demo2")
+    @ApiImplicitParams(
+            {@ApiImplicitParam(name = "user",value = "用户实体",required = true,dataType = "User")
+            }
+    )
+    @RequestMapping(value = "/myDemo2", method = RequestMethod.POST)
+    //@ModelAttribute 收不到参数.  用这个页面会有Model Schema
+    //@RequestParam  报错 Required User parameter 'user' is not present
+    //@RequestBody  正常.
+    public String demo2(@RequestBody User user) {
+        System.out.println(user);
+        return "success";
+    }
+
+
+    @ApiOperation(value="我的demo3")
+    @RequestMapping(value = "/myDemo3", method = RequestMethod.GET)
+    public String demo3(@RequestParam User user) {
+        System.out.println(user);
+        return "success";
+    }
+
+    @ApiOperation(value="我的demo3")
+    @ApiImplicitParams(
+            {
+                    @ApiImplicitParam(name = "id",value = "id",required = true,dataType = "Long"),
+                    @ApiImplicitParam(name = "name",value = "name",required = true,dataType = "String"),
+                    @ApiImplicitParam(name = "age",value = "age",required = true,dataType = "Integer")
+            }
+    )
+    @RequestMapping(value = "/myDemo4", method = RequestMethod.GET)
+    public String demo4(@RequestParam User user) {
+        System.out.println(user);
+        return "success";
+    }
+
+    @ApiOperation(value="我的demo5")
+    @ApiImplicitParams(
+            {@ApiImplicitParam(name = "user",value = "用户实体",required = true,dataType = "User")
+            }
+    )
+    @RequestMapping(value = "/myDemo5", method = RequestMethod.GET)
+    //@ModelAttribute 收不到参数.  用这个页面会有Model Schema
+    //@RequestParam  报错 Required User parameter 'user' is not present
+    //@RequestBody  正常.
+    public String demo5(@RequestBody User user) {
+        System.out.println(user);
         return "success";
     }
 }
